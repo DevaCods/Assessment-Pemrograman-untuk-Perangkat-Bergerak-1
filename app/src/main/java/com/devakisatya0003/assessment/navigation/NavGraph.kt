@@ -22,7 +22,7 @@ fun SetupNavGraph() {
         }
 
         composable("result/{score}") {
-            val score = it.arguments?.getSring("score")?.toInt() ?: 0
+            val score = it.arguments?.getString("score")?.toInt() ?: 0
             ResultScreen(navController, score)
         }
 

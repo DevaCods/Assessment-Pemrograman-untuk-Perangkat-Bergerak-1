@@ -16,9 +16,23 @@ fun ResultScreen(navController: NavHostController, score: Int) {
 
     val context = LocalContext.current
 
-    Column(modifier = Modifier.padding(16.dp)) {
+    val resultText = when {
+        score >= 80 -> stringResource(R.string.result_pintar)
+        score >= 50 -> stringResource(R.string.result_lumayan)
+        else -> stringResource(R.string.result_belajar)
+    }
+
+    Column(
+        modifier = Modifier.padding(16.dp)
+    ) {
 
         Text(stringResource(R.string.label_score, score))
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(resultText)
+
+        Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = {
             val intent = Intent(Intent.ACTION_SEND).apply {
@@ -30,10 +44,24 @@ fun ResultScreen(navController: NavHostController, score: Int) {
             Text(stringResource(R.string.btn_share))
         }
 
+        Spacer(modifier = Modifier.height(8.dp))
+
         Button(onClick = {
-            navController.navigate("quiz/test")
+            navController.navigate("quiz/test") {
+                popUpTo("home")
+            }
         }) {
             Text(stringResource(R.string.btn_repeat))
+        }
+
+        Button(onClick = {
+            navController.navigate("home") {
+                popUpTo("home") {
+                    inclusive = true
+                }
+            }
+        }) {
+            Text(stringResource(R.string.btn_kembali))
         }
     }
 }
