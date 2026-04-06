@@ -22,6 +22,7 @@ import androidx.navigation.NavHostController
 import com.devakisatya0003.assessment.R
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import com.devakisatya0003.assessment.navigation.Screen
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -65,7 +66,7 @@ fun HomeScreen(navController: NavHostController) {
             if (name.isEmpty() || category.isEmpty()) {
                 error = true
             } else {
-                navController.navigate("quiz/$name")
+                navController.navigate(Screen.Quiz.createRoute(name))
             }
         }) {
             Text(stringResource(R.string.btn_start))

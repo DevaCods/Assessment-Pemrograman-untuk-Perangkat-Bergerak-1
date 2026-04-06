@@ -12,6 +12,7 @@ import androidx.compose.ui.res.*
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.devakisatya0003.assessment.R
+import com.devakisatya0003.assessment.navigation.Screen
 
 @Composable
 fun QuizScreen(navController: NavHostController, name: String) {
@@ -20,9 +21,15 @@ fun QuizScreen(navController: NavHostController, name: String) {
     var score by rememberSaveable { mutableIntStateOf(0) }
     var selected by rememberSaveable { mutableIntStateOf(-1) }
 
+    if (index >= questionList.size) return
+
     val question = questionList[index]
 
     Column(modifier = Modifier.padding(16.dp)) {
+
+        Text("Halo $name")
+
+        Spacer(modifier = Modifier.height(8.dp))
 
         Text(
             stringResource(
@@ -56,20 +63,23 @@ fun QuizScreen(navController: NavHostController, name: String) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(onClick = {
+        Button(
+            onClick = {
 
-            if (selected == question.answer) {
-                score += 10
-            }
+                if (selected == question.answer) {
+                    score += 10
+                }
 
-            if (index < questionList.size - 1) {
-                index++
-                selected = -1
-            } else {
-                navController.navigate("result/$score")
-            }
+                if (index < questionList.size - 1) {
+                    index++
+                    selected = -1
+                } else {
+                    navController.navigate(Screen.Result.createRoute(score))
+                }
 
-        }) {
+            },
+            enabled = selected != -1
+        ) {
             Text(stringResource(R.string.btn_next))
         }
     }

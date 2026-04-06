@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import com.devakisatya0003.assessment.R
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.devakisatya0003.assessment.navigation.Screen
 
 @Composable
 fun ResultScreen(navController: NavHostController, score: Int) {
@@ -47,16 +48,18 @@ fun ResultScreen(navController: NavHostController, score: Int) {
         Spacer(modifier = Modifier.height(8.dp))
 
         Button(onClick = {
-            navController.navigate("quiz/test") {
-                popUpTo("home")
+            navController.navigate(Screen.Quiz.createRoute("test")) {
+                popUpTo(Screen.Home.route)
             }
         }) {
             Text(stringResource(R.string.btn_repeat))
         }
 
+        Spacer(modifier = Modifier.height(8.dp))
+
         Button(onClick = {
-            navController.navigate("home") {
-                popUpTo("home") {
+            navController.navigate(Screen.Home.route) {
+                popUpTo(Screen.Home.route) {
                     inclusive = true
                 }
             }
