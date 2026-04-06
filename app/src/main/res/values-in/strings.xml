@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quiz Pintar</string>
+    <string name="title_home">Quiz Pintar</string>
+    <string name="input_name">Nama</string>
+    <string name="choose_category">Pilih Kategori</string>
+    <string name="btn_start">Mulai Kuis</string>
+    <string name="btn_about">Tentang</string>
+    <string name="btn_next">Lanjut</string>
+    <string name="btn_repeat">Ulangi</string>
+    <string name="btn_return">Kembali</string>
+    <string name="btn_share">Bagikan</string>
+    <string name="error_input">Mohon isi kolom</string>
+    <string name="label_score">Skor %1$d</string>
+    <string name="question_number">Pertanyaan %1$d/%2$d</string>
+    <string name="result_pintar">Pintar🧠</string>
+    <string name="result_lumayan">Tidak buruk🙂</string>
+    <string name="result_belajar">Belajar lagi😅</string>
+    <string name="about_title">Tentang Aplikasi</string>
+    <string name="about_desc">Aplikasi kuis sederhana</string>
+    <string name="about_name">Nama: I Gede Made Devaki Satya Nanda</string>
+    <string name="about_nim">NIM: 607062400003</string>
+</resources>

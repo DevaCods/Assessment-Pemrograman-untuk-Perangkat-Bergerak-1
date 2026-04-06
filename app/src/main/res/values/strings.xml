@@ -9,7 +9,7 @@
     <string name="btn_about">About</string>
     <string name="btn_next">Next</string>
     <string name="btn_repeat">Repeat</string>
-    <string name="btn_kembali">Kembali</string>
+    <string name="btn_return">Return</string>
     <string name="btn_share">Share</string>
 
     <string name="error_input">Please fill all fields!</string>

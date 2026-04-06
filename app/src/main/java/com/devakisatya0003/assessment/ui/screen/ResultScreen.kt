@@ -64,7 +64,7 @@ fun ResultScreen(navController: NavHostController, score: Int) {
                 }
             }
         }) {
-            Text(stringResource(R.string.btn_kembali))
+            Text(stringResource(R.string.btn_return))
         }
     }
 }
